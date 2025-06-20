@@ -578,3 +578,18 @@ a{
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .hero span {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .hero .container {
+    margin: 0 10px;
+  }
+}
