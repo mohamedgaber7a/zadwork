@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Payment Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="contain">
+        <a href="#" class="logo"><img src="Layer 1.png" alt="Zadwork Logo" /></a>
+        <!-- <div class="burger" id="burger">&#9776;</div> -->
+        <ul class="navbar-nav" id="nav-menu">
+          <li>About Service</li>
+          <li>About Clients</li>
+          <li>Reviews</li>
+          <li>Terms and Conditions</li>
+          <li>Community</li>
+        </ul>
+        <div class="primarybtn">
+          <a href="#"><span>Contact Us</span></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="product-page">
+    <div class="container grid-2-cols">
+
+      <!-- Left Column -->
+      <div class="left-column">
+
+        <!-- Product Card -->
+        <div class="product-card">
+          <div class="product-content">
+            <h3 class="product-title">Logo Design</h3>
+            <p class="product-seller">Seller: <span>Mahmoud ElSaey</span></p>
+            <p class="product-description">
+              I will design a professional logo for your brand or business.
+            </p>
+            <p class="product-price">$50.00</p>
+          </div>
+          <div class="product-image">
+            <img src="Rectangle 2330.png" alt="Logo Design">
+          </div>
+        </div>
+        
+        <!-- Seller Contact Section -->
+        <div class="seller-contacts">
+          <label>Seller Contacts:</label>
+          <div class="contact-buttons">
+            <a href="tel:+201234567890" class="btn call-btn">
+              <i class="fas fa-phone"></i> Start Call
+            </a>
+            <a href="https://wa.me/201234567890" class="btn whatsapp-btn" target="_blank">
+              <i class="fab fa-whatsapp"></i> Whatsapp
+            </a>
+            <a href="mailto:example@email.com" class="btn message-btn">
+              <i class="fas fa-envelope"></i> Send Message
+            </a>
+          </div>
+          
+          <label class="checkbox-wrapper">
+            <input type="checkbox" /> Are You Contact With Seller?
+          </label>
+        </div>
+
+        <!-- Payment Card -->
+        <div class="card">
+          <h4 class="section-title">Your Personal Information:</h4>
+          <div class="form-row">
+            <!-- Phone Number -->
+            <div class="input-group">
+              <label>Phone Number</label>
+              <div class="input-icon">
+                <div class="flag-prefix">
+                  <img src="emojione_flag-for-egypt.png" alt="EG Flag" />
+                  <span>(+20)</span>
+                </div>
+                <input type="tel" placeholder="000 0000 000" />
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+            </div>
+          
+            <!-- Email Address -->
+            <div class="input-group">
+              <label>Email Address</label>
+              <div class="input-icon">
+                <input type="email" placeholder="Enter your email address" />
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+          </div>
+          
+
+          <h4 class="section-title">Payment Information:</h4>
+          <div class="input-group">
+            <label>Cardholder Full Name</label>
+            <input type="text" placeholder="Enter your full name" />
+          </div>
+
+          <div class="input-group">
+            <label>Card Number</label>
+            <div class="input-icon">
+              <input type="text" placeholder="Enter your card number" />
+              <i class="far fa-credit-card"></i>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <!-- Exp Date -->
+            <div class="input-group exp-date">
+              <label>Exp Date</label>
+              <div class="input-icon">
+                <input type="text" placeholder="MM/YY" />
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+            </div>
+          
+            <!-- VCC -->
+            <div class="input-group vcc">
+              <label>VCC</label>
+              <div class="input-icon">
+                <input type="text" placeholder="VCC" />
+                <i class="fas fa-credit-card"></i>
+              </div>
+            </div>
+          </div>
+          
+
+          <!-- Footer Row داخل كرت الدفع -->
+          <div class="footer-row">
+            <div class="secure-msg">
+              <i class="fas fa-shield-alt"></i>
+              <span>All transactions are encrypted.</span>
+            </div>
+            <div class="payment-icons">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="MasterCard" />              
+            </div>
+          </div>
+
+          <!-- Payment Gateway + زر Buy Now -->
+          <div class="gateway-section">
+            <h4>Payment Gateway</h4>
+            <button class="btn buy-now">
+              Buy Now
+              <span class="icon-circle"><i class="fas fa-arrow-right"></i></span>
+            </button>
+          </div>
+
+        </div> <!-- /card -->
+
+      </div> <!-- /left-column -->
+
+      <!-- Right Column - Support -->
+      <div class="card support-box">
+        <div class="icon"><i class="fas fa-check-circle"></i></div>
+        <h4>You can contact us if you face any problem with the seller because Astroeast guarantees your rights 100%</h4>
+        <p>Lorem ipsum dolor sit amet consectetur. In nullam pretium neque habitasse nunc velit enim. Luctus lectus habitant iaculis vulputate odio odio id in. Sed id bibendum eu nulla feugiat leo.</p>
+        <a href="mailto:info@astroest.com"><i class="fas fa-envelope"></i> info@astroest.com</a>
+        <p><strong>Thank you,<br>Astroeast Support Team</strong></p>
+      </div>
+
+    </div> <!-- /container -->
+  </main>
+
+</body>
+</html>

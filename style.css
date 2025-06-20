@@ -1,0 +1,580 @@
+/* ==========================
+   Root Variables (Design System)
+========================== */
+:root {
+  /* Primary Colors */
+  --color-primary: #9FE870;
+  --color-primary-70: #687194;
+  --color-primary-50: #9198B2;
+  --color-primary-40: #A6ADC2;
+  --color-primary-30: #BCC2D2;
+  --color-primary-20: #CFD6E0;
+  --color-primary-10: #E5EBF0;
+
+  /* Secondary Colors */
+  --color-secondary: #006A95;
+  --color-secondary-70: #00C6CF;
+  --color-secondary-50: #7CE2E6;
+  --color-secondary-40: #95E8EC;
+  --color-secondary-30: #AFEEF1;
+  --color-secondary-20: #C7F4F5;
+  --color-secondary-10: #E1FAFB;
+
+  /* Accent / Alert */
+  --color-red: #E22900;
+  --color-red-10: #FBEAE4;
+
+  /* Font Colors */
+  --font-color-1: #163300;
+  --font-color-2: #656565;
+  --font-color-3: #A4A4A4;
+  --font-color-4: #C6C6C6;
+  --font-color-5: #E5E7E7;
+
+  /* Base Layout */
+  --card-color: #F9F9F9;
+  --background-color: #FDFFFF;
+
+  /* Font Sizes */
+  --font-hero: 72px;
+  --font-regular-36: 36px;
+  --font-regular-32: 32px;
+  --font-regular-28: 28px;
+  --font-regular-24: 24px;
+  --font-regular-20: 20px;
+  --font-medium-20: 20px;
+  --font-regular-16: 16px;
+  --font-medium-16: 16px;
+  --font-bold-16: 16px;
+  --font-regular-14: 14px;
+  --font-medium-14: 14px;
+  --font-bold-14: 14px;
+  --font-regular-12: 12px;
+  --font-medium-12: 12px;
+  --font-bold-12: 12px;
+  --font-regular-10: 10px;
+  --font-bold-10: 10px;
+}
+
+/* ==========================
+   Fonts
+========================== */
+@font-face {
+  font-family: 'Din Next LT Arabic';
+  src: url('fonts/DinNextLTArabic-Regular.woff2') format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Din Next LT Arabic';
+  src: url('fonts/DinNextLTArabic-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+/* ==========================
+   Base
+========================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* لتجنب تغطية الـ navbar الثابت */
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+/* ========== 3. Navbar ========== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ========== Logo ========== */
+.logo img {
+  height: 30px;
+  object-fit: contain;
+}
+
+/* ========== Navigation Links ========== */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav li {
+  position: relative;
+  font-size: 16px;
+  /* color: var(--font-color-2); */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.navbar-nav li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--font-color-1);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav li:hover {
+  color: var(--font-color-1);
+  font-weight: 500;
+}
+
+.navbar-nav li:hover::after {
+  width: 100%;
+}
+
+.navbar-nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Burger Button (Mobile) ========== */
+.burger {
+  display: none;
+  width: 30px;
+  height: 22px;
+  position: relative;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+.burger span,
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background-color: var(--font-color-1);
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+}
+
+.burger span { top: 9px; }
+.burger::before { top: 0; }
+.burger::after { bottom: 0; }
+
+/* ========== Primary Button ========== */
+.primarybtn a {
+  background-color: #A8EB75;
+  color: #000;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* تأثير hover */
+.primarybtn a:hover {
+  background-color: #0e2400;
+  color: #fff;
+  animation: shake 0.3s;
+}
+
+/* تعريف أنيميشن الاهتزاز */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
+/* Responsive Navbar */
+
+/* ==========================
+   Hero Section
+========================== */
+.hero {
+  position: relative;
+  padding: 0 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.hero .container {
+  max-width: 1200px;
+  margin: 0 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: var(--font-color-1);
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.hero span {
+  display: block;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--font-color-2);
+}
+
+/* ==========================
+   Filters Section
+========================== */
+.filter-ui {
+  padding: 40px 20px;
+  background-color: #fff;
+
+}
+
+.filter-ui-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-left: 140px;
+
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #f6f5f5;
+  border: none;
+  border-radius: 30px;
+  color: #444;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-toggle:hover {
+  background-color: #eaeaea;
+}
+
+.filter-toggle i {
+  font-size: 14px;
+  color: #444;
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background-color: #ddd;
+}
+
+.select-input {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23111' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 36px;
+  min-width: 160px;
+}
+
+.select-input:focus {
+  outline: none;
+  border-color: #bbb;
+}
+
+/* ==========================
+   Cards Section
+========================== */
+.cards-section {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  padding: 16px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.card p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card .price {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================
+   Footer
+========================== */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  font-size: 14px;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: var(--color-primary);
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer hr {
+  margin: 30px auto;
+  width: 80%;
+  border-color: #333;
+}
+
+.footer-payments img {
+  height: 40px;
+  width: 76px;
+  margin: 0 8px;
+  /* filter: brightness(0) invert(1); */
+}
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar-nav {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    background-color: white;
+    padding: 16px;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 99;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .primarybtn {
+    display: none;
+  }
+}
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1024px) {
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .navbar-nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    flex-direction: column;
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    bottom: 0;
+    overflow-y: auto;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar-nav li {
+    margin-bottom: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+  }
+
+  .navbar-nav li:last-child {
+    border-bottom: none;
+  }
+
+  .primarybtn {
+    display: none;
+  }
+
+  .mobile-login {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .mobile-login a {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+
+  .mobile-login a:hover {
+    background-color: #87ce60;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
